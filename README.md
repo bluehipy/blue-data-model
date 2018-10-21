@@ -71,3 +71,81 @@ console.log(JSON.stringify(teamA));
 
 console.log(JSON.stringify(teamB));
 ```
+# Output
+s
+```json
+   {  
+      "id":1,
+      "name":"Team A",
+      "id_coach":333,
+      "coach":{  
+         "id":333,
+         "name":"Boss",
+         "role":"coach"
+      },
+      "players":[  
+         {  
+            "id":1,
+            "name":"Johny",
+            "id_team":1,
+            "role":"player"
+         },
+         {  
+            "id":2,
+            "name":"Billy",
+            "id_team":1,
+            "role":"player"
+         },
+         {  
+            "id":3,
+            "name":"Hans",
+            "id_team":1,
+            "role":"player"
+         },
+         {  
+            "id":4,
+            "name":"Karl",
+            "id_team":1,
+            "role":"player"
+         }
+      ]
+   }
+   ```
+   ```json
+   {  
+      "id":2,
+      "name":"Team B",
+      "id_coach":222,
+      "coach":{  
+         "id":222,
+         "name":"The Boss",
+         "role":"coach"
+      },
+      "players":[  
+         {  
+            "id":1,
+            "name":"Johny",
+            "id_team":2,
+            "role":"player"
+         },
+         {  
+            "id":2,
+            "name":"Billy",
+            "id_team":2,
+            "role":"player"
+         },
+         {  
+            "id":3,
+            "name":"Hans",
+            "id_team":2,
+            "role":"player"
+         },
+         {  
+            "id":4,
+            "name":"Karl",
+            "id_team":2,
+            "role":"player"
+         }
+      ]
+   }
+```

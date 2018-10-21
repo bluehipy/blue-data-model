@@ -72,7 +72,7 @@ console.log(JSON.stringify(teamA));
 console.log(JSON.stringify(teamB));
 ```
 # Output
-s
+
 ```json
    {  
       "id":1,

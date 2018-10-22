@@ -1,17 +1,19 @@
 {
-  "name": "SimpleDataModel",
+  "name": "blue-data-model",
   "version": "1.0.0",
   "description": "A simple data model.",
   "main": "./src/index.js",
   "scripts": {
-    "start": "node index.js",
     "test": "node ./test/index.js"
+  },
+  "engines": {
+    "node": ">=6.0.0"
   },
   "keywords": ["data","model"],
   "author": "Andrei Patriciu <bluehipy@gmail.com>",
   "license": "MIT",
   "repository": {
    "type": "git",
-   "url": "https://github.com/bluehipy/simple-data-model.git"
- },
+   "url": "https://github.com/bluehipy/blue-data-model.git"
+ }
 }

@@ -1,26 +1,34 @@
-# simple-data-model
-A simple relational data model in javascript
+# Blue Data Model
+A simple relational data model in javascript.
+It supports defining basic relations (one to one, one to many) and does simple task and checks on your defined fields (type check, value converts, composite fields).
+The model accept composite keys and ensure constraints and keep a state of their dirtiness and validity based on the state of their fields.
+Some effort was made so the model instances will JSON.stringify only the fields data.
 
+# Installation
+
+```bash
+npm install blue-data-model
+```
 
 # Usage
 
 ```javascript
-SimpleDataModel = require('./src/index.js');
+BlueDataModel = require('./src/index.js');
 
-SimpleDataModel.define('Person', {
+BlueDataModel.define('Person', {
   fields: ['id', 'name', 'id_team', 'role']
 });
 
-SimpleDataModel.define('Team', {
+BlueDataModel.define('Team', {
   fields:['id', 'name', 'id_coach'],
   hasOne:[{
-    model: SimpleDataModel.Person,
+    model: BlueDataModel.Person,
     key: 'coach',
     foreignKey: ['id'],
     sourceKey: ['id_coach']
   }],
   hasMany:[{
-    model: SimpleDataModel.Person,
+    model: BlueDataModel.Person,
     key: 'players',
     foreignKey: ['id_team'],
     sourceKey: ['id']
@@ -45,7 +53,7 @@ let playersCfg = [{
   role: "player"
 }];
 
-let teamA = SimpleDataModel.Team.create({
+let teamA = BlueDataModel.Team.create({
   id:1,
   name: 'Team A',
   coach: {
@@ -55,9 +63,9 @@ let teamA = SimpleDataModel.Team.create({
     },
     players: playersCfg
   });
-let teamB = new SimpleDataModel.Team({id:2, name: 'Team B'});
-let coachA = new SimpleDataModel.Person({id: 100, name: 'Boss', role: 'coach'});
-let coachB = new SimpleDataModel.Person({id: 200, name: 'The Boss', role: 'coach'});
+let teamB = new BlueDataModel.Team({id:2, name: 'Team B'});
+let coachA = new BlueDataModel.Person({id: 100, name: 'Boss', role: 'coach'});
+let coachB = new BlueDataModel.Person({id: 200, name: 'The Boss', role: 'coach'});
 
 teamA.coach = coachA;
 coachA.id= 333;

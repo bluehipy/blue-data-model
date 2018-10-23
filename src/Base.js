@@ -1,4 +1,4 @@
-module.exports = class {
+class Base {
   constructor(props) {
     this.defineLocal('prefix', props ? props.prefix || '_' : '_');
     if(props) {
@@ -23,3 +23,5 @@ module.exports = class {
     });
   }
 }
+
+module.exports = Base;

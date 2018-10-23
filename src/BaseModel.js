@@ -113,13 +113,12 @@ class BaseModel extends Base{
     }
 
     applyRelation(relation, relationType) {
-      let rel = this.getProp(relation.key);
+      let props,
+          rel = this.getProp(relation.key);
 
       if (!rel) {
-          this.setProp(relation.key, new relationType({
-            ...relation,
-            keyValue: relation.sourceKey.map(fieldName => this[fieldName])
-          }));
+        props = Object.assign({}, relation, {keyValue: relation.sourceKey.map(fieldName => this[fieldName])});
+        this.setProp(relation.key, new relationType(props));
           rel = this.getProp(relation.key);
           this.applyConstraints(rel);
       }
